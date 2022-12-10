@@ -15,6 +15,7 @@ jobs:
       - name: Run tests
         run: npm run test
   deploy:
+    needs: test ## name of the job to complete before starting. {job1,job2}: wait for multiple jobs
     runs-on: ubuntu-latest
     steps:
       - name: Get code
